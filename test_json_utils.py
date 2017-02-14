@@ -6,6 +6,10 @@ import json
 def make_game_library_from_json(json_data):
     #Initialize a new GameLibrary
     game_library = test_data.GameLibrary()
+    with open("test_data.json") as json_data:
+        data = json.load(json_data)
+        for i in range(0,2):
+            game_library.append(data)
 
     #Loop through the json_data
         #Create a new Game object from the json_data by reading
@@ -16,6 +20,9 @@ def make_game_library_from_json(json_data):
     #Return the completed game_library
 
     return game_library
+    a = print_game_library(game_library)
+    print (a)
+
 
 # Handling command line arguments
 #  Note: sys.argv is a list of strings that contains each command line argument
